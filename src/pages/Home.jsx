@@ -1,27 +1,28 @@
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
+import { useContext, useEffect, useState } from 'react';
+import { Button } from 'react-bootstrap';
+
+// import Form from 'react-bootstrap/Form';
 import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../context';
 
 const Home = () => {
   const navigate = useNavigate();
-
-  const onSubmit = () => navigate('/posts');
-
   return (
     <main>
       <div className="bg-light p-5 mb-5">
         <h1>React + Bootstrap v4</h1>
         <p>React template with Bootstrap version v4</p>
         <p>
-          <Button variant="primary">Learn more</Button>
+          <Button onClick={() => navigate('/formOne')} variant="primary">
+            Go to Form
+          </Button>
         </p>
       </div>
-      <Container>
+      {/* <Container>
         <Form>
           <Button onClick={onSubmit}>Goto Posts</Button>
         </Form>
-      </Container>
+      </Container> */}
     </main>
   );
 };
